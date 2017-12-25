@@ -1,0 +1,13 @@
+# $name#$pathToGitDir
+project.git=windimportant#C:\Users\huangluohua\.jenkins\workspace\code-commit-windimportant\.git
+project.git=wechat-platform#C:\Users\huangluohua\.jenkins\workspace\code-commit-wechat-platform\.git
+project.git=mongodb-file-server#C:\Users\huangluohua\.jenkins\workspace\code-commit-mongodb-file-server\.git
+project.git=first#C:\Users\huangluohua\.jenkins\workspace\code-commit-first\.git
+project.git=fcsc_second#C:\Users\huangluohua\.jenkins\workspace\code-commit-fcsc_second\.git
+project.git=ebond_pc_app#C:\Users\huangluohua\.jenkins\workspace\code-commit-ebond_pc_app\.git
+project.git=ebond-mobile-ios#C:\Users\huangluohua\.jenkins\workspace\code-commit-ebond-mobile-ios\.git
+project.git=center#C:\Users\huangluohua\.jenkins\workspace\code-commit-center\.git
+project.git=angular2#C:\Users\huangluohua\.jenkins\workspace\ebond-code-commit-angular2\.git
+project.git=ebond-mobile-android#C:\Users\huangluohua\.jenkins\workspace\code-commit-ebond-mobile-android\.git
+project.git=ebond-mobile-front#C:\Users\huangluohua\.jenkins\workspace\code-commit-ebond-mobile-front\.git
+project.git=mobile#C:\Users\huangluohua\.jenkins\workspace\code-commit-mobile\.git

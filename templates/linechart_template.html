@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>Tables</title>
+
+<body>
+<script src="highcharts.js"></script>
+<script src="exporting.js"></script>
+
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+<script type="text/javascript">
+Highcharts.chart('container', {
+    chart: {
+        type: 'line'
+    },
+    title: {
+        text: 'Monthly Code Commit Count'
+    },
+    subtitle: {
+        text: 'Source: http://10.224.204.101/ebond'
+    },
+    xAxis: {
+        categories: [TO_BE_REPLACED_TITLE]
+    },
+    yAxis: {
+        title: {
+            text: 'Code Commit Counts'
+        }
+    },
+    plotOptions: {
+        line: {
+            dataLabels: {
+                enabled: true
+            },
+            enableMouseTracking: false
+        }
+    },
+    series: [TO_BE_REPLACED_DATEPOINTS]
+});
+</script>
+
+</body>
+
+</html>
