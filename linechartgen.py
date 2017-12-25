@@ -30,7 +30,6 @@ def debug_info(str_info):
 
 
 def generate_line_chart(git_name, git_dir, since_when, before_when):
-    # git_dir = 'D:/eBond/center/.git'
     # git_name = 'center'
     today = datetime.date.today()
 
@@ -42,8 +41,7 @@ def generate_line_chart(git_name, git_dir, since_when, before_when):
     # run - all stats.
     # it will return a summary for the whole project:
     #    e.g,
-    #    255  gaojun
-    #    46  THINK
+    #    255  authour_name
     # command_commits = 'git --git-dir=' + git_dir + '--since="MONTHS months ago" ' + 'shortlog -sn'
     output_all = subprocess.run(['git', '--git-dir=' + git_dir, 'shortlog',
                                  '--since="' + since_when + '"', '--before="' + before_when + '"', '-sn'],
@@ -129,11 +127,3 @@ debug_info(today)
 for key, value in allproject.items():
     debug_info('Generating report for project ' + key)
     generate_line_chart(key, value, '2016-10-01', str(today))
-
-
-'''
-{
-        name: 'liukai',
-        data: [7.0, 6.9, 9.5, 14.5, 18.4, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
-    },
-'''
