@@ -1,3 +1,3 @@
-# $name#$pathToGitDir
-project.git=project_a#C:\project_a\.git
-project.git=project_b#C:\project_b\.git
+# git_url
+project.git=http://huangluohua@ipaddr/yyy/xxx.git
+project.git=http://huangluohua@ipaddr/yyy2/xxx2.git

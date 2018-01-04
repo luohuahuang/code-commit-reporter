@@ -4,18 +4,10 @@ import shutil
 import os
 import fileinput
 import glob
+# from code_contribution_reporter.blameit import debug_info
 
-# parameters
-project_dir = os.path.dirname(os.path.realpath(__file__))
-piechart_template_file = project_dir + '/templates/piechart_template.html'
-piechart_text_to_search_1 = 'TO_BE_REPLACED_DATEPOINTS'
-piechart_text_to_search_2 = 'TO_BE_REPLACED_TITLE'
 
-files = glob.glob(project_dir + '/reports/*piechart*.html')
-for f in files:
-    os.remove(f)
-
-debug = False
+debug = True
 
 
 def debug_info(str_info):
@@ -24,18 +16,28 @@ def debug_info(str_info):
     return
 
 
+# parameters
+project_dir = os.path.dirname(os.path.realpath(__file__))
+piechart_template_file = project_dir + '/templates/piechart_template.html'
+piechart_text_to_search_1 = 'TO_BE_REPLACED_DATEPOINTS'
+piechart_text_to_search_2 = 'TO_BE_REPLACED_TITLE'
+
+
 def generate_pie_chart(git_name, git_dir, since_when, before_when):
+    # git_dir = 'D:/eBond/center/.git'
     # git_name = 'center'
     today = datetime.date.today()
     debug_info(today)
     # run - all stats.
     # it will return a summary for the whole project:
     #    e.g,
-    #    255  authour_name
+    #    255  gaojun
+    #    46  THINK
     # command_commits = 'git --git-dir=' + git_dir + '--since="MONTHS months ago" ' + 'shortlog -sn'
     output_all = subprocess.run(['git', '--git-dir=' + git_dir, 'shortlog',
                                  '--since="' + since_when + '"', '--before="' + before_when + '"', '-sn'],
                                 stdout=subprocess.PIPE).stdout.decode('utf-8')
+
     allStats = output_all.split("  ")
     allDict_count = {}
     all_count = 0
@@ -69,21 +71,4 @@ def generate_pie_chart(git_name, git_dir, since_when, before_when):
     if os.path.isfile(report_file + '.bak'):
         os.remove(report_file + '.bak')
 
-
-file = open(project_dir + '/config.txt', 'r')
-allproject = {}
-for line in file:
-    if (line.startswith('#') is False) and (line.startswith('project.git')):
-        s = line.split('=')[1].strip().split('#')
-        allproject[s[0]] = s[1]
-
-# parser.generatePieChart('center', 'D:/eBond/center/.git', '1200')
-for key, value in allproject.items():
-    generate_pie_chart(key, value, "1200 months ago", '2099-01-01')
-    generate_pie_chart(key, value, "12 months ago", '2099-01-01')
-    generate_pie_chart(key, value, "6 months ago", '2099-01-01')
-    generate_pie_chart(key, value, "3 months ago", '2099-01-01')
-    generate_pie_chart(key, value, "1 month ago", '2099-01-01')
-
-########################################################
 
