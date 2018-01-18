@@ -4,7 +4,7 @@ Usage
 * ensure you have Python 3 installed
 * configure your PYTHONPATH=/path/to/code_contribution_reporter/..
 * update config.txt with your git information.
-* run python blameit.py
+* run python blameit.py 
 ![alt text](https://luohuahuang.files.wordpress.com/2017/12/code_report_11.png?w=525)
 * for every project you configure in config.txt, you should see the same items as above are generated. *-piechart* is reports in the form of pie chart. *-linechart* is reports in the form of line chart. The date before .html in the names is the date the reports are generated.  *-1-month-ago* means the report is for last last month.
 
